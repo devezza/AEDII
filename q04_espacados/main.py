@@ -1,10 +1,28 @@
 import turtle as t
 
+def desenhar_retangulos(W,N):
+    seg = W/(N+1)
+
+    r.forward(seg-L/2)
+    r.left(60)
+    r.forward(L)
+    r.right(120)
+    r.forward(L)
+    r.left(60)
+    for i in range(N-1):
+        r.forward(seg-L)
+        r.left(60)
+        r.forward(L)
+        r.right(120)
+        r.forward(L)
+        r.left(60)
+    r.forward(seg-L/2)
+
 if __name__ == '__main__':
 
-    W = 600
-    N = 4
-    L = 100
+    W = int(input('Tamanho da tela:'))
+    L = int(input('Tamanho do lado do triangulo:'))
+    N = int(input('Quantidade:'))
 
     janela = t.Screen()
     janela.setup(W,W)
@@ -15,31 +33,6 @@ if __name__ == '__main__':
     r.pd()
     r.pensize(5)
 
-    seg = W/(N+1)
-
-    r.forward(seg-L/2)
-    r.left(60)
-    r.forward(L)
-    r.right(120)
-    r.forward(L)
-    r.left(60)
-    for i in range(N-2):
-        r.forward(seg-L)
-        r.left(60)
-        r.forward(L)
-        r.right(120)
-        r.forward(L)
-        r.left(60)
-    r.forward(seg-L)
-    r.left(60)
-    r.forward(L)
-    r.right(120)
-    r.forward(L)
-    r.left(60)
-    r.forward(seg-L/2)
-
-
+    desenhar_retangulos(W,N)
     
     janela.mainloop()
-
-    # n = int(input())
